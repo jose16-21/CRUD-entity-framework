@@ -1,0 +1,145 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Estados de Cuenta
+</name>
+</assembly>
+<members>
+<member name="T:WindowsApplication1.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources._2000px_Nuvola_apps_error_svg">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.banco_industrial">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.cross">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.delete_256">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:WindowsApplication1.Class_Rol.Ingreso_Rol(System.String,System.String)">
+ <summary>
+ Ingreso de Rol con dos parametros nombre y descripcion
+ </summary>
+ <param name="strNombre">Ingreso de Nombre del Rol</param>
+ <param name="strDescripcon">Breve descripcion del Rol</param>
+ <returns>1 si es completada correctamente , -1 si sucede un error</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_Rol.Eliminar_rol(System.Int64)">
+ <summary>
+ Eliminacion de Rol del Sistema
+ </summary>
+ <param name="lngId_Rol"> llave primaria</param>
+ <returns>1 si es completada correctamente , -1 si sucede un error</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_Rol.Actualizar_Rol(System.String,System.String,System.Int64)">
+ <summary>
+ Actualiza nombres y descripcion de los roles
+ </summary>
+ <param name="strNombre"> nombre del rol</param>
+ <param name="strDescripcion">descripcion del rol</param>
+ <returns>1 si es completada correctamente , -1 si sucede un error</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_Usuario.Ingreso_Usuario(System.String,System.String,System.Int64)">
+ <summary>
+ Ingreso de usuario al sistema 
+ </summary>
+ <param name="strNombre">Nombre de usuario para logiarse</param>
+ <param name="strContraseña">contraseña</param>    
+ <param name="lngRol">El rol que va asignarse al usuario</param>
+ <returns>1 si es completada correctamente , -1 si sucede un error</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_Usuario.Eliminar_usuario(System.Int64)">
+ <summary>
+ Eliminacion de usuario
+ </summary>
+ <param name="lngId_Usuario"> llave primaria </param>
+ <returns>1 si es completada correctamente , -1 si sucede un error</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_Persona.Ingreso_Personas(System.String,System.String,System.Int64,System.Int64)">
+ <summary>
+ Ingreso de persona al sistema
+ </summary>
+ <param name="strNombres">Nombre o nombres del usuario</param>
+ <param name="strApellidos">Apellido o apellidos del usuario</param>
+ <param name="lngCodigoEmp">codigo de empleado</param>
+ <param name="lngUsuario">Seleccionar un usuario ya creado para esta persona</param>
+ <returns>1 si es completada correctamente , -1 si sucede un error</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_Persona.eliminar_persona(System.Int64)">
+ <summary>
+ Eliminacion de una persona
+ </summary>
+ <param name="lngId_persona">llave primaria</param>
+ <returns>1 si es completada correctamente , -1 si sucede un error</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_Persona.Actualizar_persona(System.String,System.String,System.Int64,System.Int64)">
+ <summary>
+ Actualizacion de personas en el sistema
+ </summary>
+ <param name="strNomres">Nombres de usuarios</param>
+ <param name="strApellidos">Apellidos de usuarios</param>
+ <param name="lngUsuario">llave foranea la tabla usuario</param>    
+ <param name="lngIdPersona">llave primaria de la persona</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Identityy.ValidaUsuario(System.String,System.String)">
+ <summary>
+ Valida usuario en base de datos y encripta la contraseña en MD5
+ </summary>
+ <param name="username">usuario que debe de existir </param>
+ <param name="password">contraseña valida en el sistema</param>
+ <returns>true si los parametros son validos false si es lo contrario</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Identityy.ObtienePassword(System.String)">
+ <summary>
+ Obtiene contraseña de la base de datos y la retorna si existe el usuario
+ </summary>
+ <param name="StrUsuario">Usuario que existe en base de datos</param>
+ <returns> si el usuario existe devuelte contraseña sino devuelve "" vacio</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Class_permisos.Eliminar_permiso(System.Int64,System.Int64)">
+ <summary>
+ Funcion que elimina un permiso asignado a un rol en especifico
+ </summary>
+ <param name="lngId_permiso"> id del permiso a eliminar </param>
+ <returns>devulve 1 si es exitoso y -1 si ha ocurrido un error</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

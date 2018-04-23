@@ -1,0 +1,25 @@
+$Recycle.Bin
+Apps
+Archivos de programa
+BC5
+Config.Msi
+dell
+Django-1.6.8
+Documents and Settings
+Drivers
+inetpub
+Intel
+Logs
+MSOCache
+nueva
+PerfLogs
+Program Files
+ProgramData
+Proyectos
+Python27
+stylus
+System Volume Information
+Users
+VALGETAL
+Windows
+xampp

@@ -1,0 +1,64 @@
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.exe.config
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.exe.manifest
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.application
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.exe
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.pdb
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.xml
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\DB.dll
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\EntityFramework.dll
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\DB.pdb
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\DB.xml
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\EntityFramework.xml
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.vbprojResolveAssemblyReference.cache
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmArchivo.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmNvaPersona.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmNvoRol.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmNvoUsuarios.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmMantenimientoCuenta.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmResporte.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmTipoConsulta.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmLogin.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.Inicio.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.MenuPrincipal.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmPermiso.resources
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.vbproj.GenerateResource.Cache
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.exe.manifest
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.application
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.exe
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.xml
+C:\Users\e-solutions\Desktop\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.pdb
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.exe.config
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.exe
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.pdb
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.vbprojResolveAssemblyReference.cache
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmArchivo.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmNvaPersona.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmNvoRol.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmNvoUsuarios.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmMantenimientoCuenta.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmResporte.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmTipoConsulta.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.FrmLogin.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.Inicio.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.MenuPrincipal.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\WindowsApplication1.frmPermiso.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.vbproj.GenerateResource.Cache
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.exe.manifest
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.application
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.exe
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.pdb
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\Estados de Cuenta.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\DB.dll
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\EntityFramework.dll
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\DB.pdb
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\DB.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\EntityFramework.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.exe.manifest
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\WindowsApplication1\obj\Debug\Estados de Cuenta.application

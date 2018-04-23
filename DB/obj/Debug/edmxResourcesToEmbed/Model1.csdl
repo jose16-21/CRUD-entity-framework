@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="proyectoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Archivo">
+    <Key>
+      <PropertyRef Name="id_archivo" />
+    </Key>
+    <Property Name="id_archivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numero_cuenta" Type="Int32" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="tipo_transaccion" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="agencia" Type="Int32" />
+    <Property Name="documento" Type="Int32" />
+    <Property Name="valor" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="secuencia" Type="Int32" />
+    <Property Name="saldo" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Cuenta" Relationship="Self.fk_cuenta" FromRole="Archivo" ToRole="Cuenta" />
+    <NavigationProperty Name="tipo_transaccion1" Relationship="Self.fk_tipo_transaccion" FromRole="Archivo" ToRole="tipo_transaccion" />
+  </EntityType>
+  <EntityType Name="Cuenta">
+    <Key>
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="Numero" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fk_tipo_cuenta" Type="Int32" />
+    <NavigationProperty Name="Archivo" Relationship="Self.fk_cuenta" FromRole="Cuenta" ToRole="Archivo" />
+    <NavigationProperty Name="tipo_cuenta" Relationship="Self.fk_tipo_cuenta" FromRole="Cuenta" ToRole="tipo_cuenta" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="id_permiso" />
+    </Key>
+    <Property Name="id_permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="permiso_asignado" Relationship="Self.fk_permiso_permiso" FromRole="permiso" ToRole="permiso_asignado" />
+  </EntityType>
+  <EntityType Name="permiso_asignado">
+    <Key>
+      <PropertyRef Name="id_asignado" />
+    </Key>
+    <Property Name="id_asignado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_rol" Type="Int32" Nullable="false" />
+    <Property Name="fk_permiso" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="permiso" Relationship="Self.fk_permiso_permiso" FromRole="permiso_asignado" ToRole="permiso" />
+    <NavigationProperty Name="Rol" Relationship="Self.fk_rol_rol" FromRole="permiso_asignado" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="id_persona" />
+    </Key>
+    <Property Name="id_persona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="codigo_empleado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fk_usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.fk_usuario" FromRole="persona" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="id_rol" />
+    </Key>
+    <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="permiso_asignado" Relationship="Self.fk_rol_rol" FromRole="Rol" ToRole="permiso_asignado" />
+    <NavigationProperty Name="Usuario" Relationship="Self.fk_rol" FromRole="Rol" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="tipo_cuenta">
+    <Key>
+      <PropertyRef Name="id_tipo_cuenta" />
+    </Key>
+    <Property Name="id_tipo_cuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cuenta" Relationship="Self.fk_tipo_cuenta" FromRole="tipo_cuenta" ToRole="Cuenta" />
+  </EntityType>
+  <EntityType Name="tipo_transaccion">
+    <Key>
+      <PropertyRef Name="id_tipo_transaccion" />
+    </Key>
+    <Property Name="id_tipo_transaccion" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Archivo" Relationship="Self.fk_tipo_transaccion" FromRole="tipo_transaccion" ToRole="Archivo" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contraseña" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="creacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <Property Name="rol" Type="Int32" Nullable="false" />
+    <Property Name="asignado" Type="Boolean" />
+    <NavigationProperty Name="persona" Relationship="Self.fk_usuario" FromRole="Usuario" ToRole="persona" />
+    <NavigationProperty Name="Rol1" Relationship="Self.fk_rol" FromRole="Usuario" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="carga_archivo">
+    <Key>
+      <PropertyRef Name="id_carga_archivo" />
+    </Key>
+    <Property Name="id_carga_archivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cargado" Type="Int32" />
+    <Property Name="fecha" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="Int32" />
+    <Property Name="fecha_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="fk_cuenta">
+    <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
+    <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuenta">
+        <PropertyRef Name="Numero" />
+      </Principal>
+      <Dependent Role="Archivo">
+        <PropertyRef Name="numero_cuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tipo_transaccion">
+    <End Role="tipo_transaccion" Type="Self.tipo_transaccion" Multiplicity="0..1" />
+    <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_transaccion">
+        <PropertyRef Name="id_tipo_transaccion" />
+      </Principal>
+      <Dependent Role="Archivo">
+        <PropertyRef Name="tipo_transaccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tipo_cuenta">
+    <End Role="tipo_cuenta" Type="Self.tipo_cuenta" Multiplicity="0..1" />
+    <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_cuenta">
+        <PropertyRef Name="id_tipo_cuenta" />
+      </Principal>
+      <Dependent Role="Cuenta">
+        <PropertyRef Name="fk_tipo_cuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_permiso_permiso">
+    <End Role="permiso" Type="Self.permiso" Multiplicity="1" />
+    <End Role="permiso_asignado" Type="Self.permiso_asignado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permiso">
+        <PropertyRef Name="id_permiso" />
+      </Principal>
+      <Dependent Role="permiso_asignado">
+        <PropertyRef Name="fk_permiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rol_rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="permiso_asignado" Type="Self.permiso_asignado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="permiso_asignado">
+        <PropertyRef Name="fk_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="persona" Type="Self.persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="persona">
+        <PropertyRef Name="fk_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="proyectoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Archivo" EntityType="Self.Archivo" />
+    <EntitySet Name="Cuenta" EntityType="Self.Cuenta" />
+    <EntitySet Name="permiso" EntityType="Self.permiso" />
+    <EntitySet Name="permiso_asignado" EntityType="Self.permiso_asignado" />
+    <EntitySet Name="persona" EntityType="Self.persona" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" />
+    <EntitySet Name="tipo_cuenta" EntityType="Self.tipo_cuenta" />
+    <EntitySet Name="tipo_transaccion" EntityType="Self.tipo_transaccion" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="carga_archivo" EntityType="Self.carga_archivo" />
+    <AssociationSet Name="fk_cuenta" Association="Self.fk_cuenta">
+      <End Role="Cuenta" EntitySet="Cuenta" />
+      <End Role="Archivo" EntitySet="Archivo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tipo_transaccion" Association="Self.fk_tipo_transaccion">
+      <End Role="tipo_transaccion" EntitySet="tipo_transaccion" />
+      <End Role="Archivo" EntitySet="Archivo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tipo_cuenta" Association="Self.fk_tipo_cuenta">
+      <End Role="tipo_cuenta" EntitySet="tipo_cuenta" />
+      <End Role="Cuenta" EntitySet="Cuenta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_permiso_permiso" Association="Self.fk_permiso_permiso">
+      <End Role="permiso" EntitySet="permiso" />
+      <End Role="permiso_asignado" EntitySet="permiso_asignado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rol_rol" Association="Self.fk_rol_rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="permiso_asignado" EntitySet="permiso_asignado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_usuario" Association="Self.fk_usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="persona" EntitySet="persona" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rol" Association="Self.fk_rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <FunctionImport Name="bitacora" ReturnType="Collection(proyectoModel.bitacora_Result)" />
+    <FunctionImport Name="ListaCuentas" ReturnType="Collection(proyectoModel.ListaCuentas_Result)" />
+    <FunctionImport Name="listadoUsuarios" ReturnType="Collection(proyectoModel.listadoUsuarios_Result)" />
+    <FunctionImport Name="ListaPersonas" ReturnType="Collection(proyectoModel.ListaPersonas_Result)" />
+    <FunctionImport Name="bitacora1" ReturnType="Collection(proyectoModel.bitacora1_Result)" />
+    <FunctionImport Name="FTPCARGA" ReturnType="Collection(proyectoModel.FTPCARGA_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(proyectoModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(proyectoModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="listadoUsuarios1" ReturnType="Collection(proyectoModel.listadoUsuarios1_Result)" />
+    <FunctionImport Name="listadoUsuario" ReturnType="Collection(proyectoModel.listadoUsuario_Result)" />
+    <FunctionImport Name="listadoUsr" ReturnType="Collection(proyectoModel.listadoUsr_Result)" />
+    <FunctionImport Name="ListaPer" ReturnType="Collection(proyectoModel.ListaPer_Result)" />
+    <FunctionImport Name="ListaCta" ReturnType="Collection(proyectoModel.ListaCta_Result)" />
+  </EntityContainer>
+  <ComplexType Name="bitacora_Result">
+    <Property Type="String" Name="fecha" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="usuario" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="hora" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TIPO" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="ListaCuentas_Result">
+    <Property Type="Int32" Name="NumeroCnt" Nullable="false" />
+    <Property Type="String" Name="NombreCnt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TipoCnt" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="listadoUsuarios_Result">
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Rol" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DescripcionRol" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="Asignado" Nullable="true" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="ListaPersonas_Result">
+    <Property Type="String" Name="Persona" Nullable="false" MaxLength="400" />
+    <Property Type="String" Name="Usuario" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Rol" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="bitacora1_Result">
+    <Property Type="String" Name="fecha" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="fecha_crea" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="usuario" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="hora" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TIPO" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="FTPCARGA_Result">
+    <Property Type="String" Name="fecha" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TIPO" Nullable="true" MaxLength="57" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="listadoUsuarios1_Result">
+    <Property Type="Int32" Name="id_usuario" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="contraseña" Nullable="false" MaxLength="200" />
+    <Property Type="DateTime" Name="creacion" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="estado" Nullable="false" />
+    <Property Type="Int32" Name="rol" Nullable="false" />
+    <Property Type="Boolean" Name="asignado" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="listadoUsuario_Result">
+    <Property Type="Int32" Name="id_usuario" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="contraseña" Nullable="false" MaxLength="200" />
+    <Property Type="DateTime" Name="creacion" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="estado" Nullable="false" />
+    <Property Type="Int32" Name="rol" Nullable="false" />
+    <Property Type="Boolean" Name="asignado" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="listadoUsr_Result">
+    <Property Type="Int32" Name="id_usuario" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="contraseña" Nullable="false" MaxLength="200" />
+    <Property Type="DateTime" Name="creacion" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="estado" Nullable="false" />
+    <Property Type="Int32" Name="rol" Nullable="false" />
+    <Property Type="Boolean" Name="asignado" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ListaPer_Result">
+    <Property Type="Int32" Name="id_persona" Nullable="false" />
+    <Property Type="String" Name="nombres" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="codigo_empleado" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="fk_usuario" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ListaCta_Result">
+    <Property Type="Int32" Name="Numero" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="fk_tipo_cuenta" Nullable="true" />
+  </ComplexType>
+</Schema>

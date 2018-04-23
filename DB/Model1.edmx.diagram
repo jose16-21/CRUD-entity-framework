@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c6143a74e8304c05bcf9e2a478005a82" Name="Diagram1">
+        <EntityTypeShape EntityType="proyectoModel.Archivo" Width="1.5" PointX="10.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.Cuenta" Width="1.5" PointX="8" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.permiso" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.permiso_asignado" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.persona" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.Rol" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.tipo_cuenta" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.tipo_transaccion" Width="1.5" PointX="8" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.Usuario" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectoModel.carga_archivo" Width="1.5" PointX="2.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="proyectoModel.fk_cuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoModel.fk_tipo_transaccion" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoModel.fk_tipo_cuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoModel.fk_permiso_permiso" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoModel.fk_rol_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoModel.fk_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectoModel.fk_rol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

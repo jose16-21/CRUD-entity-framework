@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="proyectoModel1StoreContainer" CdmEntityContainer="proyectoEntities">
+    <EntitySetMapping Name="Archivo">
+      <EntityTypeMapping TypeName="proyectoModel1.Archivo">
+        <MappingFragment StoreEntitySet="Archivo">
+          <ScalarProperty Name="id_archivo" ColumnName="id_archivo" />
+          <ScalarProperty Name="numero_cuenta" ColumnName="numero_cuenta" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tipo_transaccion" ColumnName="tipo_transaccion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="agencia" ColumnName="agencia" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuenta">
+      <EntityTypeMapping TypeName="proyectoModel1.Cuenta">
+        <MappingFragment StoreEntitySet="Cuenta">
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="fk_tipo_cuenta" ColumnName="fk_tipo_cuenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permiso">
+      <EntityTypeMapping TypeName="proyectoModel1.permiso">
+        <MappingFragment StoreEntitySet="permiso">
+          <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permiso_asignado">
+      <EntityTypeMapping TypeName="proyectoModel1.permiso_asignado">
+        <MappingFragment StoreEntitySet="permiso_asignado">
+          <ScalarProperty Name="id_asignado" ColumnName="id_asignado" />
+          <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+          <ScalarProperty Name="fk_permiso" ColumnName="fk_permiso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="persona">
+      <EntityTypeMapping TypeName="proyectoModel1.persona">
+        <MappingFragment StoreEntitySet="persona">
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="codigo_empleado" ColumnName="codigo_empleado" />
+          <ScalarProperty Name="fk_usuario" ColumnName="fk_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="proyectoModel1.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="proyectoModel1.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_cuenta">
+      <EntityTypeMapping TypeName="proyectoModel1.tipo_cuenta">
+        <MappingFragment StoreEntitySet="tipo_cuenta">
+          <ScalarProperty Name="id_tipo_cuenta" ColumnName="id_tipo_cuenta" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_transaccion">
+      <EntityTypeMapping TypeName="proyectoModel1.tipo_transaccion">
+        <MappingFragment StoreEntitySet="tipo_transaccion">
+          <ScalarProperty Name="id_tipo_transaccion" ColumnName="id_tipo_transaccion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="proyectoModel1.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="creacion" ColumnName="creacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="asignado" ColumnName="asignado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carga_archivo">
+      <EntityTypeMapping TypeName="proyectoModel1.carga_archivo">
+        <MappingFragment StoreEntitySet="carga_archivo">
+          <ScalarProperty Name="id_carga_archivo" ColumnName="id_carga_archivo" />
+          <ScalarProperty Name="cargado" ColumnName="cargado" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="bitacora" FunctionName="proyectoModel1.Store.bitacora">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoModel1.bitacora_Result">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListaCuentas" FunctionName="proyectoModel1.Store.ListaCuentas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoModel1.ListaCuentas_Result">
+          <ScalarProperty Name="NumeroCnt" ColumnName="NumeroCnt" />
+          <ScalarProperty Name="NombreCnt" ColumnName="NombreCnt" />
+          <ScalarProperty Name="TipoCnt" ColumnName="TipoCnt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="listadoUsuarios" FunctionName="proyectoModel1.Store.listadoUsuarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoModel1.listadoUsuarios_Result">
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="DescripcionRol" ColumnName="DescripcionRol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Asignado" ColumnName="Asignado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListaPersonas" FunctionName="proyectoModel1.Store.ListaPersonas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyectoModel1.ListaPersonas_Result">
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

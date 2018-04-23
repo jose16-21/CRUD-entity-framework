@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="proyectoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Archivo">
+    <Key>
+      <PropertyRef Name="id_archivo" />
+    </Key>
+    <Property Name="id_archivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero_cuenta" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="tipo_transaccion" Type="int" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="agencia" Type="int" />
+    <Property Name="documento" Type="int" />
+    <Property Name="valor" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="secuencia" Type="int" />
+    <Property Name="saldo" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="carga_archivo">
+    <Key>
+      <PropertyRef Name="id_carga_archivo" />
+    </Key>
+    <Property Name="id_carga_archivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cargado" Type="int" />
+    <Property Name="fecha" Type="varchar" MaxLength="15" />
+    <Property Name="usuario" Type="varchar" MaxLength="30" />
+    <Property Name="hora" Type="varchar" MaxLength="10" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="tipo" Type="int" />
+    <Property Name="fecha_crea" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Cuenta">
+    <Key>
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="fk_tipo_cuenta" Type="int" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="id_permiso" />
+    </Key>
+    <Property Name="id_permiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="permiso_asignado">
+    <Key>
+      <PropertyRef Name="id_asignado" />
+    </Key>
+    <Property Name="id_asignado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_rol" Type="int" Nullable="false" />
+    <Property Name="fk_permiso" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="id_persona" />
+    </Key>
+    <Property Name="id_persona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="codigo_empleado" Type="varchar" MaxLength="200" />
+    <Property Name="fk_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="id_rol" />
+    </Key>
+    <Property Name="id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tipo_cuenta">
+    <Key>
+      <PropertyRef Name="id_tipo_cuenta" />
+    </Key>
+    <Property Name="id_tipo_cuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tipo_transaccion">
+    <Key>
+      <PropertyRef Name="id_tipo_transaccion" />
+    </Key>
+    <Property Name="id_tipo_transaccion" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="contraseña" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="creacion" Type="datetime" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+    <Property Name="rol" Type="int" Nullable="false" />
+    <Property Name="asignado" Type="bit" />
+  </EntityType>
+  <Association Name="fk_cuenta">
+    <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
+    <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuenta">
+        <PropertyRef Name="Numero" />
+      </Principal>
+      <Dependent Role="Archivo">
+        <PropertyRef Name="numero_cuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_permiso_permiso">
+    <End Role="permiso" Type="Self.permiso" Multiplicity="1" />
+    <End Role="permiso_asignado" Type="Self.permiso_asignado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permiso">
+        <PropertyRef Name="id_permiso" />
+      </Principal>
+      <Dependent Role="permiso_asignado">
+        <PropertyRef Name="fk_permiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rol_rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="permiso_asignado" Type="Self.permiso_asignado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="id_rol" />
+      </Principal>
+      <Dependent Role="permiso_asignado">
+        <PropertyRef Name="fk_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tipo_cuenta">
+    <End Role="tipo_cuenta" Type="Self.tipo_cuenta" Multiplicity="0..1" />
+    <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_cuenta">
+        <PropertyRef Name="id_tipo_cuenta" />
+      </Principal>
+      <Dependent Role="Cuenta">
+        <PropertyRef Name="fk_tipo_cuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tipo_transaccion">
+    <End Role="tipo_transaccion" Type="Self.tipo_transaccion" Multiplicity="0..1" />
+    <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_transaccion">
+        <PropertyRef Name="id_tipo_transaccion" />
+      </Principal>
+      <Dependent Role="Archivo">
+        <PropertyRef Name="tipo_transaccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="persona" Type="Self.persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="persona">
+        <PropertyRef Name="fk_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ListaCta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="listadoUsr" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ListaPer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="proyectoModelStoreContainer">
+    <EntitySet Name="Archivo" EntityType="Self.Archivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="carga_archivo" EntityType="Self.carga_archivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cuenta" EntityType="Self.Cuenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="permiso" EntityType="Self.permiso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="permiso_asignado" EntityType="Self.permiso_asignado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipo_cuenta" EntityType="Self.tipo_cuenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipo_transaccion" EntityType="Self.tipo_transaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_cuenta" Association="Self.fk_cuenta">
+      <End Role="Cuenta" EntitySet="Cuenta" />
+      <End Role="Archivo" EntitySet="Archivo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_permiso_permiso" Association="Self.fk_permiso_permiso">
+      <End Role="permiso" EntitySet="permiso" />
+      <End Role="permiso_asignado" EntitySet="permiso_asignado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rol" Association="Self.fk_rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rol_rol" Association="Self.fk_rol_rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="permiso_asignado" EntitySet="permiso_asignado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tipo_cuenta" Association="Self.fk_tipo_cuenta">
+      <End Role="tipo_cuenta" EntitySet="tipo_cuenta" />
+      <End Role="Cuenta" EntitySet="Cuenta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tipo_transaccion" Association="Self.fk_tipo_transaccion">
+      <End Role="tipo_transaccion" EntitySet="tipo_transaccion" />
+      <End Role="Archivo" EntitySet="Archivo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_usuario" Association="Self.fk_usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="persona" EntitySet="persona" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

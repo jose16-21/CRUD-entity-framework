@@ -1,0 +1,40 @@
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\DB.dll.config
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\DB.dll
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\DB.pdb
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\DB.xml
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\EntityFramework.dll
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\EntityFramework.xml
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\obj\Debug\DB.Resources.resources
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\obj\Debug\DB.vbproj.GenerateResource.Cache
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\obj\Debug\DB.dll
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\obj\Debug\DB.xml
+C:\Users\E-solutions\Desktop\Autenticacion_usuarios\DB\obj\Debug\DB.pdb
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\DB.dll.config
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\DB.dll
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\DB.pdb
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\DB.xml
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\EntityFramework.dll
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\EntityFramework.xml
+C:\Users\e-solutions\Desktop\ss\DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\e-solutions\Desktop\ss\DB\obj\Debug\DB.Resources.resources
+C:\Users\e-solutions\Desktop\ss\DB\obj\Debug\DB.vbproj.GenerateResource.Cache
+C:\Users\e-solutions\Desktop\ss\DB\obj\Debug\DB.dll
+C:\Users\e-solutions\Desktop\ss\DB\obj\Debug\DB.xml
+C:\Users\e-solutions\Desktop\ss\DB\obj\Debug\DB.pdb
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\DB.dll.config
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\DB.dll
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\DB.pdb
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\DB.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\EntityFramework.dll
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\EntityFramework.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\obj\Debug\DB.Resources.resources
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\obj\Debug\DB.vbproj.GenerateResource.Cache
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\obj\Debug\DB.dll
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\obj\Debug\DB.xml
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\obj\Debug\DB.pdb
+C:\Users\e-solutions\Desktop\Vitatrack ejecutable carga registros\ss\DB\obj\Debug\DB.vbprojResolveAssemblyReference.cache
